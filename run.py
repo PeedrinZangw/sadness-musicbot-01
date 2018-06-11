@@ -28,7 +28,7 @@ async def on_message(message):
 		  
 @client.event
 async def wait_until_login():
-    await client.change_presence(game=discord.Game(name='Lofi Hip-Hop 24 Horas'))
+    await client.change_status(game=discord.Game(name='Lofi Hip-Hop 24 Horas'))
 
 
 client.run(TOKEN)
