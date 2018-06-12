@@ -1,5 +1,7 @@
 import discord
 import secreto
+import asyncio
+import random
 
 
 client = discord.Client()
