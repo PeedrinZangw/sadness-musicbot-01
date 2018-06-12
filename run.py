@@ -1,6 +1,7 @@
 import discord
 import secreto
 import asyncio
+import youtube-dl
 
 client = discord.Client()
 TOKEN = secreto.seu_token()
