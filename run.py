@@ -9,7 +9,7 @@ TOKEN = secreto.seu_token()
 async def on_ready():
     print(client.user.name)
     print("Bot online - Olá Mundo!")
-	await client.change_presence(game=discord.Game(name="Lofi Hip-Hop 24 Horas"))
+    await client.change_presence(game=discord.Game(name="Lofi Hip-Hop 24 Horas"))
 
 @client.event
 async def on_message(message):
