@@ -27,5 +27,16 @@ async def on_message(message):
       except AttributeError:
              await client.send_message(message.channel,"```ATENÇÃO: O BOT Não está conectado à nenhum canal de VOZ...```")
 
+    if message.content.startswith('s1!tocar'):
+      try:
+            yt_url = message.content[6:]
+            channel = message.author.voice.voice_channel
+            voice = await client.join_voice_channel(channel)
+            player = await voice.create_ytdl_player(yt_url)
+            players[message.server.id] = player
+            player.start()
+      except:
+            await client.send_message(message.channel, "```Erro.```")
+
 
 client.run(TOKEN)
