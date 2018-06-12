@@ -26,6 +26,21 @@ async def on_message(message):
         await canaldevoz.disconnect()
       except AttributeError:
           await client.send_message(message.channel,"```ATENÇÃO: O BOT Não está conectado à nenhum canal de VOZ...```")
+		  
+    if message.content.lower().startswith('s1!teste'):
+        await client.send_message(message.channel, "```Mensagem de TESTE...```")
+
+    if message.content.lower().startswith('!moeda'): #Coinflip 50/50% chance kopf oder zahl
+        choice = random.randint(1,2)
+        if choice == 1:
+            await client.add_reaction(message, '🌑')
+        if choice == 2:
+            await client.add_reaction(message, '🌕')
+
+    if message.content.startswith('!game') and message.author.id == DEIN_USERNAME:
+        game = message.content[6:]
+        await client.change_presence(game=discord.Game(name=game))
+        await client.send_message(message.channel, "Meu status foi alterado para " + game + "")
 
 
 client.run(TOKEN)
